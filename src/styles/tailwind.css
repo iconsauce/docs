@@ -1,0 +1,141 @@
+@layer components {
+  .text-primary-h1 {
+    @apply
+      antialiased
+      font-extrabold
+      font-primary
+      text-5xl
+      tracking-tight;
+  }
+
+  .text-primary-h2 {
+    @apply
+      antialiased
+      font-extrabold
+      font-primary
+      text-4xl
+      tracking-tight;
+  }
+
+  .text-primary-h3 {
+    @apply
+      antialiased
+      font-extrabold
+      font-primary
+      text-3xl
+      tracking-tight;
+  }
+
+  .text-primary-h4 {
+    @apply
+      antialiased
+      font-bold
+      font-primary
+      text-2xl
+      tracking-tight;
+  }
+
+  .text-primary-h5 {
+    @apply
+      antialiased
+      font-bold
+      font-primary
+      text-xl
+      tracking-tight;
+  }
+
+  .text-primary-h6 {
+    @apply
+      antialiased
+      font-bold
+      font-primary
+      text-base
+      tracking-tight;
+  }
+
+  .text-primary-action {
+    @apply
+      antialiased
+      font-bold
+      font-primary
+      leading-relaxed
+      text-sm;
+  }
+
+  .text-secondary-paragraph {
+    @apply
+      antialiased
+      font-secondary
+      leading-8
+      text-xl;
+  }
+
+  .text-secondary-detail {
+    @apply
+      antialiased
+      font-secondary
+      text-base;
+  }
+
+  .text-secondary-caption {
+    @apply
+      antialiased
+      font-secondary
+      text-sm;
+  }
+
+  .text-secondary-label {
+    @apply
+      antialiased
+      font-bold
+      font-secondary
+      text-xs
+      uppercase;
+  }
+
+  .text-secondary-option {
+    @apply
+      antialiased
+      font-bold
+      font-secondary
+      leading-none
+      text-xxs
+      tracking-tight
+      uppercase;
+  }
+
+  .text-secondary-tip {
+    @apply
+      antialiased
+      font-secondary
+      text-xs;
+  }
+
+  .text-mono-code {
+    @apply
+      antialiased
+      font-mono
+      leading-relaxed
+      text-base;
+  }
+
+  .text-mono-hack {
+    @apply
+      antialiased
+      font-mono
+      leading-relaxed
+      text-sm;
+  }
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.icon-placeholder {
+  @apply inline-flex rounded w-6 h-6 invert bg-adjust-tone-05;
+}
+
+body {
+  @apply bg-adjust-tone-04;
+}

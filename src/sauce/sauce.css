@@ -1,0 +1,6 @@
+.sauce {
+  background-image: url('../../public/img/sauce.svg');
+  background-position: 50% 100%;
+  background-repeat-y: no-repeat;
+  height: 250px;
+}
