@@ -1,7 +1,7 @@
 import { ReactElement } from 'react'
 import clsx from 'clsx'
 import './sauce.css'
-import { ComponentProps } from '../meta/component'
+import { ComponentProps } from '../../meta/component'
 
 const Sauce = ({
   children,
