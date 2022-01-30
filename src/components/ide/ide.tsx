@@ -7,17 +7,17 @@ interface IdeProps {
   className?: string,
 }
 
-const WindowButton = ({
-  className = 'bg-adjust-tone-02',
-}: ComponentProps) =>
-  <div className={clsx('w-3 h-3 rounded-full', className)}/>
+// const WindowButton = ({
+//   className = 'bg-adjust-tone-02',
+// }: ComponentProps) =>
+//   <div className={clsx('w-3 h-3 rounded-full', className)}/>
 
-const Window = () =>
-  <div className='flex gap-2'>
-    <WindowButton/>
-    <WindowButton/>
-    <WindowButton/>
-  </div>
+// const Window = () =>
+//   <div className='flex gap-2'>
+//     <WindowButton/>
+//     <WindowButton/>
+//     <WindowButton/>
+//   </div>
 
 interface TabProps {
   children?: ReactNode|ReactNode[],
@@ -53,7 +53,7 @@ const Code = ({
   </div>
 
 const Terminal = ({ children }: ComponentProps): ReactElement =>
-  <div className='grid'>
+  <div className='grid grid-rows-[auto_1fr]'>
     <div className='bg-adjust-tone-01 flex gap-2 px-4 pt-2 border-t-2 border-0 border-solid border-t-adjust-tone-02'>
       <i className='icon-placeholder mgg/terminal'/>
       <div className='text-adjust-tone-08'>Terminal</div>
@@ -66,8 +66,7 @@ const Terminal = ({ children }: ComponentProps): ReactElement =>
 const Ide = ({
   className,
 }: IdeProps): ReactElement =>
-  <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2', className)}>
-    <Window/>
+  <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2 h-[500px]', className)}>
     <div className='grid gap-2 grid-cols-2'>
       <Column>
         <File>

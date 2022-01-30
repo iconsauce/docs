@@ -1,6 +1,6 @@
 import { ReactElement } from 'react'
 
-import Button from '../button/button'
+import Button, { ButtonLight } from '../button/button'
 
 const Logo = (): ReactElement =>
   <div className='flex gap-4 items-center'>
@@ -10,7 +10,7 @@ const Logo = (): ReactElement =>
 
 const Menu = (): ReactElement =>
   <nav className='inline-flex gap-2'>
-    <Button icon="mdi/twitter" variant="bg-transparent text-adjust-tone-04 hover:bg-adjust-tone-09">Share on Twitter</Button>
+    <ButtonLight icon="mdi/twitter">Share on Twitter</ButtonLight>
     <Button icon="mdi/github">Docs</Button>
   </nav>
 
