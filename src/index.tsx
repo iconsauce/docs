@@ -62,14 +62,14 @@ ReactDOM.render(
           </Doc>
         </div>
         <Hr className='bg-adjust-tone-05'/>
-        <div className='inline-flex items-center justify-center gap-2 text-center text-secondary-paragraph text-adjust-tone'>
+        <footer className='inline-flex items-center justify-center gap-2 text-center text-secondary-paragraph text-adjust-tone'>
           <span>Built with</span>
           <i className='mdi/heart animate-bounce text-label-orchid-07 icon-placeholder'/>
           <span>by</span>
           <AccountTwitter username='vttrx'/>
           <span>and</span>
           <AccountGihub username='nictamb'/>
-        </div>
+        </footer>
       </Content>
     </Homepage>
   </StrictMode>,
