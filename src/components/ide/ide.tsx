@@ -7,6 +7,8 @@ interface IdeProps {
   className?: string,
 }
 
+// https://github.com/tailwindlabs/tailwindcss.com/blob/master/src/components/home/Performance.js
+
 // const WindowButton = ({
 //   className = 'bg-adjust-tone-02',
 // }: ComponentProps) =>
