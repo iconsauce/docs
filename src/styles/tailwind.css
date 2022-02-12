@@ -1,3 +1,5 @@
+/*! tailwind */
+
 @layer components {
   .text-primary-h1 {
     @apply
