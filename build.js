@@ -9,8 +9,6 @@ console.log('config build.js')
 config.module.rules.push({
   test: /iconsauce\.css$/,
   use: [
-    MiniCssExtractPlugin.loader,
-    'css-loader',
     {
       loader: 'postcss-loader',
       options: {
@@ -18,8 +16,7 @@ config.module.rules.push({
           config: false,
           ident: 'postcss',
           plugins: [
-            // 'postcss-import',
-            // 'postcss-iconsauce',
+            'postcss-iconsauce',
             'postcss-flexbugs-fixes',
             [
               'postcss-preset-env',
