@@ -135,7 +135,7 @@
 @tailwind utilities;
 
 .icon-placeholder {
-  @apply inline-flex rounded w-6 h-6 invert bg-adjust-tone-05;
+  @apply inline-flex rounded w-6 h-6 bg-adjust-tone-05 text-adjust-tone;
 }
 
 body {

@@ -1,10 +1,6 @@
 const rewire = require('rewire')
-const MiniCssExtractPlugin = require('mini-css-extract-plugin')
-const defaults = rewire('react-scripts/scripts/build.js')
+const defaults = rewire('react-scripts/scripts/start.js')
 const config = defaults.__get__('config')
-
-// console.log(config)
-console.log('config build.js')
 
 config.module.rules.push({
   test: /iconsauce\.css$/,
