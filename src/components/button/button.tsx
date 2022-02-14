@@ -15,7 +15,7 @@ const Button = ({
   variant = 'bg-adjust-tone-03 hover:bg-adjust-tone-04 text-adjust-tone',
 }: ButtonProps): ReactElement =>
   <a href="#" className={clsx('px-4 inline-flex items-center gap-2 h-10 no-underline rounded-lg transition-colors', variant, className)}>
-    { icon && <i className={clsx('icon-placeholder', icon)}/> }
+    { icon && <i className={icon}/> }
     <span className='text-primary-action'>{ children }</span>
   </a>
 

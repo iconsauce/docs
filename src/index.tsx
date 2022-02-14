@@ -15,8 +15,9 @@ import 'typeface-roboto'
 import 'normalize.css'
 import '@maggioli-design-system/styles/dist/css/colors-rgb.css'
 import '@maggioli-design-system/styles/dist/css/base.css'
-import './styles/tailwind.css'
+
 import './styles/iconsauce.css'
+import './styles/tailwind.css'
 
 ReactDOM.render(
   <StrictMode>
@@ -65,7 +66,7 @@ ReactDOM.render(
         <Hr className='bg-adjust-tone-05'/>
         <footer className='inline-flex items-center justify-center gap-2 text-center text-secondary-paragraph text-adjust-tone'>
           <span>Built with</span>
-          <i className='mdi/heart animate-bounce text-label-orchid-07 icon-placeholder'/>
+          <i className='mdi/heart animate-bounce text-label-orchid-07'/>
           <span>by</span>
           <AccountTwitter username='vttrx'/>
           <span>and</span>

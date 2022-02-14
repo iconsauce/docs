@@ -15,7 +15,7 @@ const Account = ({
   url,
 }: AccountProps): ReactElement =>
   <a href={url} className={clsx('inline-flex items-center gap-1 no-underline transition-colors', className)}>
-    { icon && <i className={clsx('icon-placeholder', icon)}/> }
+    { icon && <i className={icon}/> }
     <span>{ username }</span>
   </a>
 

@@ -5,13 +5,11 @@
   "main": "index.js",
   "scripts": {
     "build:css": "postcss src/styles/iconsauce.css -o public/styles/iconsauce.css",
-    "build": "react-scripts build",
-    "build:iconsauce": "node ./scripts/build.js",
+    "build": "node ./scripts/build.js",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
     "predeploy": "npm run build",
-    "start": "react-scripts start",
-    "start:iconsauce": "node ./scripts/start.js",
+    "start": "node ./scripts/start.js",
     "test": "react-scripts test"
   },
   "homepage": "https://iconsauce.github.io/docs",

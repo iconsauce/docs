@@ -30,9 +30,9 @@ interface TabProps {
 const Tab = ({ children, className, icon }: TabProps): ReactElement =>
   <div className={clsx('flex flex-grow-0 flex-shrink-0', className)}>
     <div className='inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
-      { icon && <i className={clsx(icon, 'icon-placeholder')}/> }
+      { icon && <i className={icon}/> }
       <div>{ children }</div>
-      <i className='icon-placeholder gm/close'/>
+      <i className='gm/close'/>
     </div>
   </div>
 
@@ -57,7 +57,7 @@ const Code = ({
 const Terminal = ({ children }: ComponentProps): ReactElement =>
   <div className='grid grid-rows-[auto_1fr]'>
     <div className='bg-adjust-tone-01 flex gap-2 px-4 pt-2 border-t-2 border-0 border-solid border-t-adjust-tone-02'>
-      <i className='icon-placeholder mgg/terminal'/>
+      <i className='mgg/terminal'/>
       <div className='text-adjust-tone-08'>Terminal</div>
     </div>
     <Code className='rounded-b-lg rounded-tr-none'>
