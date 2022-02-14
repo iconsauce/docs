@@ -3,12 +3,12 @@ import ReactDOM from 'react-dom'
 import Content from './components/layout/content/content'
 import Doc, { DocList } from './components/doc/doc'
 import Header from './components/header/header'
+import Footer from './components/footer/footer'
 import Headline from './components/headline/headline'
 import Homepage from './components/layout/homepage/homepage'
 import Hr from './components/hr/hr'
 import Ide from './components/ide/ide'
 import Sauce from './components/sauce/sauce'
-import { AccountGihub, AccountTwitter } from './components/account/account'
 import { ButtonDark, ButtonLight } from './components/button/button'
 import 'typeface-karla'
 import 'typeface-roboto'
@@ -64,14 +64,7 @@ ReactDOM.render(
           </Doc>
         </div>
         <Hr className='bg-adjust-tone-05'/>
-        <footer className='inline-flex items-center justify-center gap-2 text-center text-secondary-paragraph text-adjust-tone'>
-          <span>Built with</span>
-          <i className='mdi/heart animate-bounce text-label-orchid-07'/>
-          <span>by</span>
-          <AccountTwitter username='vttrx'/>
-          <span>and</span>
-          <AccountGihub username='nictamb'/>
-        </footer>
+        <Footer/>
       </Content>
     </Homepage>
   </StrictMode>,

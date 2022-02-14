@@ -72,7 +72,7 @@ const Ide = ({
     <div className='grid gap-2 grid-cols-2'>
       <Column>
         <File>
-          <Tab icon='mdi/language-html5' className='text-label-orange-06'>
+          <Tab icon='is/language-html5' className='text-label-orange-06'>
             page.html
           </Tab>
           <Code className='rounded-b-none rounded-tr-lg'>
@@ -83,7 +83,7 @@ const Ide = ({
       </Column>
       <Column>
         <File>
-          <Tab icon='mdi/language-css3' className='text-label-sky-06'>
+          <Tab icon='is/language-css3' className='text-label-sky-06'>
             build.css
           </Tab>
           <Code>
