@@ -15,9 +15,8 @@ import 'typeface-roboto'
 import 'normalize.css'
 import '@maggioli-design-system/styles/dist/css/colors-rgb.css'
 import '@maggioli-design-system/styles/dist/css/base.css'
-
-import './styles/iconsauce.css'
 import './styles/tailwind.css'
+import './styles/iconsauce.css'
 
 ReactDOM.render(
   <StrictMode>

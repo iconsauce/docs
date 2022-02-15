@@ -23,7 +23,7 @@
     "url": "https://github.com/iconsauce/docs/issues"
   },
   "dependencies": {
-    "@iconsauce/core": "^0.0.11",
+    "@iconsauce/core": "^0.0.16",
     "@iconsauce/plugin-material-design-icons-updated": "^1.0.3",
     "@iconsauce/plugin-mdi-svg": "^1.0.1",
     "@iconsauce/plugin-mgg-icons": "^1.0.1",
@@ -59,7 +59,7 @@
     "gh-pages": "^3.2.3",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "postcss-iconsauce": "0.0.3",
+    "postcss-iconsauce": "0.0.4",
     "postcss-import": "^14.0.2",
     "rewire": "^6.0.0",
     "typescript": "^4.5.4"
