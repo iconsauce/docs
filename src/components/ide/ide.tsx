@@ -32,7 +32,7 @@ const Tab = ({ children, className, icon }: TabProps): ReactElement =>
     <div className='inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
       { icon && <i className={icon}/> }
       <div>{ children }</div>
-      <i className='gm/close'/>
+      <i className='miu/close'/>
     </div>
   </div>
 

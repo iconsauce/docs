@@ -12,21 +12,11 @@
     "start": "node ./scripts/start.js",
     "test": "react-scripts test"
   },
-  "homepage": "https://iconsauce.github.io/docs",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/iconsauce/docs.git"
-  },
-  "author": "Vittorio Vittori",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/iconsauce/docs/issues"
-  },
   "dependencies": {
-    "@iconsauce/core": "^0.0.16",
-    "@iconsauce/plugin-material-design-icons-updated": "^1.0.3",
-    "@iconsauce/plugin-mdi-svg": "^1.0.1",
-    "@iconsauce/plugin-mgg-icons": "^1.0.1",
+    "@iconsauce/core": "^0.2.0",
+    "@iconsauce/material-design-icons-updated": "^1.0.3",
+    "@iconsauce/mdi-svg": "^1.0.2",
+    "@iconsauce/mgg-icons": "^1.0.1",
     "@maggioli-design-system/styles": "^6.3.0",
     "@maggioli-design-system/svg-icons": "^2.6.3",
     "@mdi/svg": "^6.5.95",
@@ -59,7 +49,7 @@
     "gh-pages": "^3.2.3",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "postcss-iconsauce": "0.0.4",
+    "postcss-iconsauce": "0.0.5",
     "postcss-import": "^14.0.2",
     "rewire": "^6.0.0",
     "typescript": "^4.5.4"
@@ -75,5 +65,15 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "homepage": "https://iconsauce.github.io/docs",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/iconsauce/docs.git"
+  },
+  "author": "Vittorio Vittori",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/iconsauce/docs/issues"
   }
 }
