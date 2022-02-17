@@ -1,5 +1,6 @@
-# docs
+# iconsauce Docs
 
-https://iconsauce.github.io/docs/
+This is the [website][iconsauce] of iconsauce, based on [react-gh-pages][react-gh-pages].
 
-Based on https://github.com/gitname/react-gh-pages
+[iconsauce]: https://iconsauce.github.io/docs/
+[react-gh-pages]: https://github.com/gitname/
