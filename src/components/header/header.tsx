@@ -3,8 +3,8 @@ import { ReactElement } from 'react'
 import Button, { ButtonLight } from '../button/button'
 
 const Logo = (): ReactElement =>
-  <div className='flex gap-4 items-center'>
-    <i className='is/logo w-12 h-12'/>
+  <div className='flex gap-1 items-center'>
+    <i className='is/logo text-5xl'/>
     <h4 className='text-primary-h4'>iconsauce</h4>
   </div>
 
