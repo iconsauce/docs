@@ -8,7 +8,7 @@ const Footer = (): ReactElement =>
     <span>by</span>
     <AccountTwitter username='vttrx'/>
     <span>and</span>
-    <AccountGihub username='nictamb'/>
+    <AccountGihub username='nicolatamburini'/>
   </footer>
 
 export default Footer
