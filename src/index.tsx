@@ -15,6 +15,7 @@ import 'typeface-roboto'
 import 'normalize.css'
 import '@maggioli-design-system/styles/dist/css/colors-rgb.css'
 import '@maggioli-design-system/styles/dist/css/base.css'
+import 'highlight.js/styles/atom-one-dark.css'
 import './styles/tailwind.css'
 import './styles/iconsauce.css'
 
@@ -29,7 +30,9 @@ ReactDOM.render(
             Have an instant huge icon library
             and build only the ones you use.
           </Headline>
-          <Ide className='shadow-2xl relative'/>
+          <Ide className='shadow-2xl relative'>
+            
+          </Ide>
           <p className='text-secondary-paragraph mt-6 text-center'>
             iconsauce ensures a <b>tiny CSS font icon build</b>, which keeps only the glyphs used by your code.
           </p>

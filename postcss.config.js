@@ -1,4 +1,4 @@
-console.log('POSTCSS tailwind e iconsauce')
+setTimeout(() => { console.log('POSTCSS tailwind e iconsauce') }, 3000)
 module.exports = {
   plugins: [
     require('postcss-import'),

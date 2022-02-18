@@ -1,25 +1,14 @@
 import { ReactElement, ReactNode } from 'react'
 import clsx from 'clsx'
+import hljs from 'highlight.js/lib/core'
+import htmlxml from 'highlight.js/lib/languages/xml'
+hljs.registerLanguage('xml', htmlxml)
 import { ComponentProps } from '../../meta/component'
 
 interface IdeProps {
   children?: ReactNode|ReactNode[],
   className?: string,
 }
-
-// https://github.com/tailwindlabs/tailwindcss.com/blob/master/src/components/home/Performance.js
-
-// const WindowButton = ({
-//   className = 'bg-adjust-tone-02',
-// }: ComponentProps) =>
-//   <div className={clsx('w-3 h-3 rounded-full', className)}/>
-
-// const Window = () =>
-//   <div className='flex gap-2'>
-//     <WindowButton/>
-//     <WindowButton/>
-//     <WindowButton/>
-//   </div>
 
 interface TabProps {
   children?: ReactNode|ReactNode[],
@@ -32,7 +21,7 @@ const Tab = ({ children, className, icon }: TabProps): ReactElement =>
     <div className='inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
       { icon && <i className={icon}/> }
       <div>{ children }</div>
-      <i className='miu/close'/>
+      <i className='miu/filled/close text-xs text-adjust-tone-06 ml-2'/>
     </div>
   </div>
 
@@ -54,15 +43,14 @@ const Code = ({
     { children }
   </div>
 
-const Terminal = ({ children }: ComponentProps): ReactElement =>
-  <div className='grid grid-rows-[auto_1fr]'>
-    <div className='bg-adjust-tone-01 flex gap-2 px-4 pt-2 border-t-2 border-0 border-solid border-t-adjust-tone-02'>
-      <i className='mgg/terminal'/>
-      <div className='text-adjust-tone-08'>Terminal</div>
-    </div>
-    <Code className='rounded-b-lg rounded-tr-none'>
-      { children }
-    </Code>
+interface HtmlProps {
+  code: string,
+  className?: string,
+}
+
+const Html = ({ className, code }: HtmlProps) =>
+  <div className={clsx(className)}>
+    <div dangerouslySetInnerHTML={{ __html: hljs.highlight(code, { language: 'xml' }).value }} />
   </div>
 
 const Ide = ({
@@ -72,18 +60,22 @@ const Ide = ({
     <div className='grid gap-2 grid-cols-2'>
       <Column>
         <File>
-          <Tab icon='is/language-html5' className='text-label-orange-06'>
+          <Tab icon='mdi/language-html5' className='text-label-orange-06'>
             page.html
           </Tab>
-          <Code className='rounded-b-none rounded-tr-lg'>
-            markup code here
+          <Code className='rounded-tr-lg rounded-b-lg'>
+            <Html code={`
+              <nav>
+                <cmp-button class="gm/heart">Save to favourites</cmp-button>
+                <cmp-button class="mdi/heart">Save to favourites</cmp-button>
+              </nav>
+            `}/>
           </Code>
         </File>
-        <Terminal>terminal log here</Terminal>
       </Column>
       <Column>
         <File>
-          <Tab icon='is/language-css3' className='text-label-sky-06'>
+          <Tab icon='mdi/language-css3' className='text-label-sky-06'>
             build.css
           </Tab>
           <Code>
