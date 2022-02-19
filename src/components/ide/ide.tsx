@@ -1,8 +1,12 @@
 import { ReactElement, ReactNode } from 'react'
 import clsx from 'clsx'
 import hljs from 'highlight.js/lib/core'
-import htmlxml from 'highlight.js/lib/languages/xml'
-hljs.registerLanguage('xml', htmlxml)
+import xml from 'highlight.js/lib/languages/xml'
+import css from 'highlight.js/lib/languages/css'
+import 'highlight.js/styles/an-old-hope.css'
+// import 'highlight.js/styles/atom-one-dark.css'
+hljs.registerLanguage('xml', xml)
+hljs.registerLanguage('css', css)
 import { ComponentProps } from '../../meta/component'
 
 interface IdeProps {
@@ -17,8 +21,8 @@ interface TabProps {
 }
 
 const Tab = ({ children, className, icon }: TabProps): ReactElement =>
-  <div className={clsx('flex flex-grow-0 flex-shrink-0', className)}>
-    <div className='inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
+  <div className={clsx('flex flex-grow-0 flex-shrink-0 relative', className)}>
+    <div className='sticky left-0  inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
       { icon && <i className={icon}/> }
       <div>{ children }</div>
       <i className='miu/filled/close text-xs text-adjust-tone-06 ml-2'/>
@@ -26,61 +30,74 @@ const Tab = ({ children, className, icon }: TabProps): ReactElement =>
   </div>
 
 const Column = ({ children }: ComponentProps): ReactElement =>
-  <div className='grid gap-0'>
+  <div className='flex'>
     { children }
   </div>
 
 const File = ({ children }: ComponentProps): ReactElement =>
-  <div className='flex flex-col'>
+  <div className='flex flex-col grow'>
     { children }
   </div>
 
-const Code = ({
-  children,
-  className = 'rounded-b-lg rounded-tr-lg',
-}: ComponentProps): ReactElement =>
-  <div className={clsx('flex-grow text-mono-code bg-adjust-tone-01 p-4 text-adjust-tone-06', className)}>
-    { children }
-  </div>
+type CodeType =
+  | 'css'
+  | 'html'
 
-interface HtmlProps {
-  code: string,
+interface CodeProps {
   className?: string,
+  code: string,
+  language: CodeType,
 }
 
-const Html = ({ className, code }: HtmlProps) =>
-  <div className={clsx(className)}>
-    <div dangerouslySetInnerHTML={{ __html: hljs.highlight(code, { language: 'xml' }).value }} />
+const Code = ({
+  className = 'rounded-tr-lg rounded-b-lg',
+  code,
+  language,
+}: CodeProps): ReactElement =>
+  <div className={clsx('grow flex text-mono-code bg-adjust-tone-01 p-4 text-adjust-tone-0 overflow-hidden', className)}>
+    <pre className={clsx(className, 'm-0 text-mono-hack text-adjust-tone-05 box-border')} dangerouslySetInnerHTML={{ __html: hljs.highlight(code.trim(), { language }).value }} />
   </div>
 
 const Ide = ({
   className,
 }: IdeProps): ReactElement =>
-  <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2 h-[500px]', className)}>
-    <div className='grid gap-2 grid-cols-2'>
+  <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2', className)}>
+    <div className='grid gap-2 wide:grid-cols-2'>
       <Column>
         <File>
-          <Tab icon='mdi/language-html5' className='text-label-orange-06'>
+          <Tab icon='mdi/language-html5 text-label-orange-06' className='text-label-orange-08'>
             page.html
           </Tab>
-          <Code className='rounded-tr-lg rounded-b-lg'>
-            <Html code={`
-              <nav>
-                <cmp-button class="gm/heart">Save to favourites</cmp-button>
-                <cmp-button class="mdi/heart">Save to favourites</cmp-button>
-              </nav>
+          <Code language="html" code={`
+<nav>
+  <!-- miu: material-design-icons-updated -->
+  <!-- mdi: @mdi/svg -->
+  <cmp-button class="miu/outline/heart">Save in favourites</cmp-button>
+  <cmp-button class="mdi/heart">Save to favourites</cmp-button>
+</nav>
             `}/>
-          </Code>
         </File>
       </Column>
       <Column>
         <File>
-          <Tab icon='mdi/language-css3' className='text-label-sky-06'>
+          <Tab icon='mdi/language-css3 text-label-sky-06' className='text-label-sky-08'>
             build.css
           </Tab>
-          <Code>
-            css code built here
-          </Code>
+          <Code language="css" code={String.raw`
+@font-face {
+  font-family: "iconsauce";
+  src: url("data:font/truetype;charset=utf-8;base64,AABBCCDDEE") format("truetype");
+}
+
+[class^="miu/"], [class*=" miu/"] {
+  font-family: "iconsauce";
+  ...
+}
+
+.miu\/filled\/10k::before { content: "\2f" }
+.miu\/filled\/1k::before { content: "\2f" }
+.miu\/filled\/add-chart::before { content: "\2f" }
+          `}/>
         </File>
       </Column>
     </div>
