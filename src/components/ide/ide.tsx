@@ -15,17 +15,27 @@ interface IdeProps {
 }
 
 interface TabProps {
-  children?: ReactNode|ReactNode[],
-  className?: string,
-  icon?: string,
+  children?: ReactNode|ReactNode[]
+  className?: string
+  icon?: string
+  status?: string
 }
 
-const Tab = ({ children, className, icon }: TabProps): ReactElement =>
+const statusDictionary: Map<string, string> = new Map()
+statusDictionary.set('saved', 'miu/filled/close text-adjust-tone-06')
+statusDictionary.set('unsaved', 'miu/filled/circle text-label-amaranth-06')
+
+const Tab = ({
+  children,
+  className,
+  icon,
+  status = 'saved',
+}: TabProps): ReactElement =>
   <div className={clsx('flex flex-grow-0 flex-shrink-0 relative', className)}>
-    <div className='sticky left-0  inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
+    <div className='sticky left-0 inline-flex items-center gap-1 pt-2 px-4 bg-adjust-tone-01 border-t border-solid border-0 border-t-adjust-tone-05 rounded-t-lg'>
       { icon && <i className={icon}/> }
       <div>{ children }</div>
-      <i className='miu/filled/close text-xs text-adjust-tone-06 ml-2'/>
+      <i className={clsx(statusDictionary.get(status), 'text-xs ml-2')}/>
     </div>
   </div>
 
@@ -65,15 +75,14 @@ const Ide = ({
     <div className='grid gap-2 wide:grid-cols-2'>
       <Column>
         <File>
-          <Tab icon='mdi/language-html5 text-label-orange-06' className='text-label-orange-08'>
+          <Tab icon='mdi/language-html5 text-label-orange-06' className='text-label-orange-08' status={'unsaved'}>
             page.html
           </Tab>
           <Code language="html" code={`
 <nav>
-  <!-- miu: material-design-icons-updated -->
-  <!-- mdi: @mdi/svg -->
-  <cmp-button class="miu/outline/heart">Save in favourites</cmp-button>
-  <cmp-button class="mdi/heart">Save to favourites</cmp-button>
+  <cmp-button class="mdi/lock">Login</cmp-button>
+  <cmp-button class="fa/solid/car">Travel</cmp-button>
+  <cmp-button class="mdi/twitter">Share</cmp-button>
 </nav>
             `}/>
         </File>

@@ -29,9 +29,7 @@ ReactDOM.render(
             Have an instant huge icon library
             and build only the ones you use.
           </Headline>
-          <Ide className='shadow-2xl relative'>
-            
-          </Ide>
+          <Ide className='shadow-2xl relative'/>
           <p className='text-secondary-paragraph mt-6 text-center'>
             iconsauce ensures a <b>tiny CSS font icon build</b>, which keeps only the glyphs used by your code.
           </p>
