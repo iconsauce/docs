@@ -1,4 +1,4 @@
-import { ReactElement, ReactNode } from 'react'
+import { ReactElement, ReactNode, useEffect, useState } from 'react'
 import clsx from 'clsx'
 import hljs from 'highlight.js/lib/core'
 import xml from 'highlight.js/lib/languages/xml'
@@ -9,35 +9,34 @@ hljs.registerLanguage('xml', xml)
 hljs.registerLanguage('css', css)
 import { ComponentProps } from '../../meta/component'
 
-// const START_DELAY = 500
-// const CHAR_DELAY = 50
-// const SAVE_DELAY = 50
-// const BUILD_DELAY = 100
-// const BLOCK_DELAY = 1000
+const START_DELAY = 1000
+const CHAR_DELAY = 75
+const SAVE_DELAY = 1000
+const FINISH_DELAY = 3000
 
-// const htmlCode = [
-//   '<cmp-li class="mdi/lock">Material Design Icons</cmp-li>',
-//   '<cmp-li class="fa/solid/car">FontAwesome</cmp-li>',
-//   '<cmp-li class="my/iconsauce">Custom Icon</cmp-li>',
-// ]
+const htmlCode = [
+  '<cmp-li class="mdi/lock">Material Design Icons</cmp-li>',
+  '<cmp-li class="fa/solid/car">FontAwesome</cmp-li>',
+  '<cmp-li class="my/iconsauce">Custom Icon</cmp-li>',
+]
 
-// const cssCode1 = [
-//   '.mdi\/lock::before { content: "\2f" }',
-//   '.fa\/solid\/car::before { content: "\2f" }',
-//   '.my\/iconsauce::before { content: "\2f" }',
-// ]
+const cssCode = [
+  [
+    'A...+45...Z',
+    'A...+167...Z',
+    'A...+315...Z',
+  ], [
+    '[class^="mdi/"], [class*=" mdi/"]',
+    '[class^="mdi/"], [class*=" mdi/"], [class^="fa/"], [class*=" fa/"]',
+    '[class^="mdi/"], [class*=" mdi/"], [class^="fa/"], [class*=" fa/"], [class^="my/"], [class*=" my/"]',
+  ],
+]
 
-// const cssCode2 = [
-//   '[class^="mdi/"], [class*=" mdi/"]',
-//   '[class^="mdi/"], [class*=" mdi/"], [class^="fa/"], [class*=" fa/"]',
-//   '[class^="mdi/"], [class*=" mdi/"], [class^="fa/"], [class*=" fa/"], [class^="my/"], [class*=" my/"]',
-// ]
-
-// const fontCode = [
-//   'A...+45...Z',
-//   'A...+167...Z',
-//   'A...+315...Z',
-// ]
+const cssCodeClasses = [
+  '.mdi\/lock::before { content: "\ea01" }',
+  '.fa\/solid\/car::before { content: "\ea02" }',
+  '.my\/iconsauce::before { content: "\ea03" }',
+]
 
 interface IdeProps {
   children?: ReactNode|ReactNode[],
@@ -79,6 +78,31 @@ const File = ({ children }: ComponentProps): ReactElement =>
     { children }
   </div>
 
+const getHtmlCode = (index:number, currentChar:number) => {
+  let prevCode = ''
+  if (index > 0) {
+    prevCode = htmlCode.slice(0, index).join('\n  ')
+    prevCode += '\n  '
+  }
+  return {
+    total: htmlCode[index].length,
+    text: prevCode + htmlCode[index].substring(0, currentChar),
+  }
+}
+
+const getCssCode = (index:number) => {
+  let prevCode = ''
+  if (index > 0) {
+    prevCode = cssCodeClasses.slice(0, index).join('\n')
+    prevCode += '\n'
+  }
+  return {
+    font: cssCode[0][index],
+    regexSelectors: cssCode[1][index],
+    icons: prevCode + cssCodeClasses[index],
+  }
+}
+
 type CodeType =
   | 'css'
   | 'html'
@@ -100,19 +124,94 @@ const Code = ({
 
 const Ide = ({
   className,
-}: IdeProps): ReactElement =>
-  <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2', className)}>
+}: IdeProps): ReactElement => {
+
+  const [started, setStarted] = useState(false)
+  const [saveStatus, setSaveStatus] = useState('pause')
+  const [textCode, setHtmlCode] = useState('')
+  const [cssFont, setCssFont] = useState('')
+  const [cssRegexSelectors, setRegexSelectors] = useState('')
+  const [cssIcons, setIcons] = useState('')
+  const [currentRow, setCurrentRow] = useState(0)
+
+  // start
+  useEffect(() => {
+    if (!started) {
+      const handle = window.setTimeout(() => {
+        setStarted(true)
+        setSaveStatus('writing')
+      }, START_DELAY)
+      return () => {
+        window.clearTimeout(handle)
+      }
+    }
+  })
+
+  // write html code
+  useEffect(() => {
+    if (started) {
+      let currentChar = 0
+      const handle = window.setInterval(() => {
+        if (saveStatus === 'writing') {
+          const { text, total } = getHtmlCode(currentRow, currentChar)
+          if (currentChar === total) {
+            setSaveStatus('row-finished')
+            setCurrentRow(currentRow + 1)
+          } else {
+            currentChar += 1
+          }
+          setHtmlCode(text)
+        }
+      }, CHAR_DELAY)
+      return () => {
+        window.clearTimeout(handle)
+      }
+    }
+  }, [started, saveStatus])
+
+  // CSS
+  useEffect(() => {
+    if (saveStatus === 'row-finished') {
+      const handle = window.setInterval(() => {
+        const { font, regexSelectors, icons } = getCssCode(currentRow)
+        if (currentRow >= htmlCode.length - 1) {
+          setSaveStatus('all-finished')
+        } else {
+          setCssFont(font)
+          setIcons(icons)
+          setRegexSelectors(regexSelectors)
+          setSaveStatus('writing')
+        }
+      }, SAVE_DELAY)
+      return () => {
+        window.clearTimeout(handle)
+      }
+    }
+  }, [saveStatus])
+
+  useEffect(() => {
+    if (saveStatus === 'all-finished') {
+      const handle = window.setInterval(() => {
+        setSaveStatus('pause')
+        setStarted(false)
+        setCurrentRow(0)
+      }, FINISH_DELAY)
+      return () => {
+        window.clearTimeout(handle)
+      }
+    }
+  }, [saveStatus])
+
+  return <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2', className)}>
     <div className='grid gap-2 wide:grid-cols-2'>
       <Column>
         <File>
-          <Tab icon='mdi/language-html5 text-label-orange-06' className='text-adjust-tone-06' status={'unsaved'}>
+          <Tab icon='mdi/language-html5 text-label-orange-06' className='text-adjust-tone-06' status={clsx(saveStatus === 'writing' ? 'unsaved' : 'saved')}>
             page.html
           </Tab>
           <Code language="html" code={`
 <ul>
-  <cmp-li class="mdi/lock">Material Design Icons</cmp-li>
-  <cmp-li class="fa/solid/car">FontAwesome</cmp-li>
-  <cmp-li class="mi/twitter">Custom Icon</cmp-li>
+  ${textCode}
 </ul>
 <p>
   Get all the SVG icons you need to a font icons CSS,
@@ -129,21 +228,20 @@ const Ide = ({
           <Code language="css" code={String.raw`
 @font-face {
   font-family: "iconsauce";
-  src: url("data:font/truetype;charset=utf-8;base64,AABBCCDDEE") format("truetype");
+  src: url("data:font/truetype;charset=utf-8;base64,${cssFont}") format("truetype");
 }
 
-[class^="miu/"], [class*=" miu/"] {
+${cssRegexSelectors} {
   font-family: "iconsauce";
   ...
 }
 
-.miu\/filled\/10k::before { content: "\2f" }
-.miu\/filled\/1k::before { content: "\2f" }
-.miu\/filled\/add-chart::before { content: "\2f" }
+${cssIcons}
           `}/>
         </File>
       </Column>
     </div>
   </div>
+}
 
 export default Ide
