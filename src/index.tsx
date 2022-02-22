@@ -26,8 +26,8 @@ ReactDOM.render(
           <Header/>
           <Hr/>
           <Headline>
-            Have an instant huge icon library
-            and build only the ones you use.
+            Have a huge icon library
+            and build only what you need.
           </Headline>
           <Ide className='shadow-2xl relative'/>
           <p className='text-secondary-paragraph mt-6 text-center'>

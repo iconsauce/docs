@@ -9,15 +9,15 @@ hljs.registerLanguage('xml', xml)
 hljs.registerLanguage('css', css)
 import { ComponentProps } from '../../meta/component'
 
-const START_DELAY = 1000
+const START_DELAY = 1500
 const CHAR_DELAY = 75
 const SAVE_DELAY = 1000
 const FINISH_DELAY = 3000
 
 const htmlCode = [
-  '<cmp-li class="mdi/lock">Material Design Icons</cmp-li>',
-  '<cmp-li class="fa/solid/car">FontAwesome</cmp-li>',
-  '<cmp-li class="my/iconsauce">Custom Icon</cmp-li>',
+  '<cmp-icon class="mdi/lock">Material Design Icons</cmp-icon>',
+  '<cmp-icon class="fa/solid/car">FontAwesome</cmp-icon>',
+  '<cmp-icon class="my/iconsauce">Custom Icon</cmp-icon>',
 ]
 
 const cssCode = [
@@ -33,9 +33,9 @@ const cssCode = [
 ]
 
 const cssCodeClasses = [
-  '.mdi\/lock::before { content: "\ea01" }',
-  '.fa\/solid\/car::before { content: "\ea02" }',
-  '.my\/iconsauce::before { content: "\ea03" }',
+  '.mdi\\/lock::before { content: "\\ea01" }',
+  '.fa\\/solid\\/car::before { content: "\\ea02" }',
+  '.my\\/iconsauce::before { content: "\\ea03" }',
 ]
 
 interface IdeProps {
@@ -81,8 +81,8 @@ const File = ({ children }: ComponentProps): ReactElement =>
 const getHtmlCode = (index:number, currentChar:number) => {
   let prevCode = ''
   if (index > 0) {
-    prevCode = htmlCode.slice(0, index).join('\n  ')
-    prevCode += '\n  '
+    prevCode = htmlCode.slice(0, index).join('\n')
+    prevCode += '\n'
   }
   return {
     total: htmlCode[index].length,
@@ -174,13 +174,12 @@ const Ide = ({
     if (saveStatus === 'row-finished') {
       const handle = window.setInterval(() => {
         const { font, regexSelectors, icons } = getCssCode(currentRow)
+        setCssFont(font)
+        setIcons(icons)
+        setRegexSelectors(regexSelectors)
+        setSaveStatus('writing')
         if (currentRow >= htmlCode.length - 1) {
           setSaveStatus('all-finished')
-        } else {
-          setCssFont(font)
-          setIcons(icons)
-          setRegexSelectors(regexSelectors)
-          setSaveStatus('writing')
         }
       }, SAVE_DELAY)
       return () => {
@@ -193,6 +192,10 @@ const Ide = ({
     if (saveStatus === 'all-finished') {
       const handle = window.setInterval(() => {
         setSaveStatus('pause')
+        setCssFont('')
+        setIcons('')
+        setHtmlCode('')
+        setRegexSelectors('')
         setStarted(false)
         setCurrentRow(0)
       }, FINISH_DELAY)
@@ -210,13 +213,11 @@ const Ide = ({
             page.html
           </Tab>
           <Code language="html" code={`
-<ul>
-  ${textCode}
-</ul>
 <p>
   Get all the SVG icons you need to a font icons CSS,
-  from different node modules or directly inside your project.
+  from different node modules and directly inside your project.
 </p>
+${textCode !== '' ? textCode + '\n' : ''}
             `}/>
         </File>
       </Column>
@@ -225,7 +226,7 @@ const Ide = ({
           <Tab icon='mdi/language-css3 text-label-sky-06' className='text-adjust-tone-06'>
             build.css
           </Tab>
-          <Code language="css" code={String.raw`
+          <Code language="css" code={cssFont === '' ? '' : String.raw`
 @font-face {
   font-family: "iconsauce";
   src: url("data:font/truetype;charset=utf-8;base64,${cssFont}") format("truetype");
