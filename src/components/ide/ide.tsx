@@ -12,7 +12,7 @@ import { ComponentProps } from '../../meta/component'
 const START_DELAY = 1500
 const CHAR_DELAY = 75
 const SAVE_DELAY = 1000
-const FINISH_DELAY = 3000
+const FINISH_DELAY = 5000
 
 const htmlCode = [
   '<cmp-icon class="mdi/lock">Material Design Icons</cmp-icon>',
