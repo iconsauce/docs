@@ -9,7 +9,7 @@ import Homepage from './components/layout/homepage/homepage'
 import Hr from './components/hr/hr'
 import Ide from './components/ide/ide'
 import Sauce from './components/sauce/sauce'
-import { ButtonDark, ButtonLight } from './components/button/button'
+import { ButtonDark } from './components/button/button'
 import 'typeface-karla'
 import 'typeface-roboto'
 import 'normalize.css'
@@ -39,26 +39,26 @@ ReactDOM.render(
         <div className='grid grid-cols-2 gap-12'>
           <Doc title='Core'>
             <DocList description='How to use iconsauce as cli command, import it in your scripts or as postcss plugin.'>
-              <ButtonDark icon="mdi/github">Installation</ButtonDark>
-              <ButtonDark icon="mdi/github">Standalone library</ButtonDark>
-              <ButtonDark icon="mdi/github">Postcss plugin</ButtonDark>
-              <ButtonDark icon="mdi/github">Write a plugin</ButtonDark>
+              {/* <ButtonDark icon="mdi/github">Standalone library</ButtonDark> */}
+              <ButtonDark icon="mdi/github" href="https://github.com/iconsauce/docs/wiki/PostCSS-plugin">Postcss plugin</ButtonDark>
+              <ButtonDark icon="mdi/github" href="https://github.com/iconsauce/docs/wiki/Write-a-plugin">Write a plugin</ButtonDark>
             </DocList>
-            <div className='self-end'>
+            {/* <div className='self-end'>
               <ButtonLight icon="mdi/twitter">Share on Twitter</ButtonLight>
-            </div>
+            </div> */}
           </Doc>
           <Doc title='Plugins'>
             <DocList description='Use iconsauce with the most used icon sets available.'>
-              <ButtonDark icon="mdi/power-plug">Material Design Icons</ButtonDark>
-              <ButtonDark icon="mdi/power-plug">Google Material Icons</ButtonDark>
-              <ButtonDark icon="mdi/power-plug">Heroicons</ButtonDark>
-              <ButtonDark icon="mdi/power-plug">Octicons</ButtonDark>
-              <ButtonDark icon="mdi/power-plug">Ionicons</ButtonDark>
-              <ButtonDark icon="mdi/power-plug">FontAwesome</ButtonDark>
+              <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/plugin-material-design-icons-updated">Material Design Icons Updated</ButtonDark>
+              <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/plugin-mdi-svg">Material Design Icons Community</ButtonDark>
+              {/* <ButtonDark icon="mdi/power-plug">Google Material Icons</ButtonDark> */}
+              {/* <ButtonDark icon="mdi/power-plug">Heroicons</ButtonDark> */}
+              {/* <ButtonDark icon="mdi/power-plug">Octicons</ButtonDark> */}
+              {/* <ButtonDark icon="mdi/power-plug">Ionicons</ButtonDark> */}
+              {/* <ButtonDark icon="mdi/power-plug">FontAwesome</ButtonDark> */}
             </DocList>
             <DocList description='Use iconsauce with your own icon set.'>
-              <ButtonDark icon="mdi/power-plug">Maggioli Icons</ButtonDark>
+              <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/plugin-mgg-icons">Maggioli Icons</ButtonDark>
             </DocList>
           </Doc>
         </div>
