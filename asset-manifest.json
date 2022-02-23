@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/docs/static/css/main.cae0b16b.css",
-    "main.js": "/docs/static/js/main.0138e498.js",
+    "main.css": "/docs/static/css/main.25c4e4fd.css",
+    "main.js": "/docs/static/js/main.f4436734.js",
     "static/media/roboto-latin-900italic.woff": "/docs/static/media/roboto-latin-900italic.c20d916c1a1b094c1cec.woff",
     "static/media/roboto-latin-300italic.woff": "/docs/static/media/roboto-latin-300italic.bd5b7a13f2c52b531a2a.woff",
     "static/media/roboto-latin-500italic.woff": "/docs/static/media/roboto-latin-500italic.18d00f739ff1e1c52db1.woff",
@@ -36,11 +36,11 @@
     "static/media/karla-latin-700.woff2": "/docs/static/media/karla-latin-700.b72aff3f88f08c8d7f83.woff2",
     "static/media/karla-latin-400.woff2": "/docs/static/media/karla-latin-400.1ad861b3e28d6fe3843c.woff2",
     "index.html": "/docs/index.html",
-    "main.cae0b16b.css.map": "/docs/static/css/main.cae0b16b.css.map",
-    "main.0138e498.js.map": "/docs/static/js/main.0138e498.js.map"
+    "main.25c4e4fd.css.map": "/docs/static/css/main.25c4e4fd.css.map",
+    "main.f4436734.js.map": "/docs/static/js/main.f4436734.js.map"
   },
   "entrypoints": [
-    "static/css/main.cae0b16b.css",
-    "static/js/main.0138e498.js"
+    "static/css/main.25c4e4fd.css",
+    "static/js/main.f4436734.js"
   ]
 }
