@@ -36,7 +36,7 @@ ReactDOM.render(
         </Content>
       </Sauce>
       <Content className='max-w-screen-desktop grid gap-12 my-12'>
-        <div className='grid grid-cols-2 gap-12'>
+        <div className='grid tablet:grid-cols-2 gap-12 tablet:px-6 desktop:p-0'>
           <Doc title='Core'>
             <DocList description='How to use iconsauce as cli command, import it in your scripts or as postcss plugin.'>
               <ButtonDark icon="is/logo" href="https://github.com/iconsauce/docs/wiki/CLI">Standalone library</ButtonDark>
@@ -44,9 +44,6 @@ ReactDOM.render(
               <ButtonDark icon="is/postcss" href="https://github.com/iconsauce/docs/wiki/PostCSS-plugin">Postcss plugin</ButtonDark>
               <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/docs/wiki/Write-a-plugin">Write a plugin</ButtonDark>
             </DocList>
-            {/* <div className='self-end'>
-              <ButtonLight icon="mdi/twitter">Share on Twitter</ButtonLight>
-            </div> */}
           </Doc>
           <Doc title='Plugins'>
             <DocList description='Use iconsauce with the most used icon sets available.'>

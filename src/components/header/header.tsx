@@ -11,7 +11,6 @@ const Logo = (): ReactElement =>
 
 const Menu = (): ReactElement =>
   <nav className='inline-flex gap-2'>
-    {/* <ButtonLight icon="mdi/twitter">Share on Twitter</ButtonLight> */}
     <Button icon="mdi/github" href="https://github.com/iconsauce/docs/wiki">Docs</Button>
   </nav>
 

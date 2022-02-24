@@ -8,7 +8,7 @@ interface DocListProps {
 }
 
 const DocList = ({ description, className, children }: DocListProps): ReactElement =>
-  <div className={clsx('grid gap-2 text-adjust-tone-08', className)}>
+  <div className={clsx('grid gap-2 text-adjust-tone-08 auto-rows-min', className)}>
     { description && <p className='text-primary-paragraph'>{ description }</p> }
     { children }
   </div>
