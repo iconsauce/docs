@@ -205,7 +205,7 @@ const Ide = ({
     }
   }, [saveStatus])
 
-  return <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2', className)}>
+  return <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2 min-h-96', className)}>
     <div className='grid gap-2 wide:grid-cols-2'>
       <Column>
         <File>

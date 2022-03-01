@@ -6,8 +6,6 @@ const Footer = (): ReactElement =>
     <div className='inline-flex gap-2 items-center'>
       <span>Built with</span>
       <i className='mdi/heart text-label-amaranth-05'/>
-      <span>and</span>
-      <a href="https://www.tailwindcss.com" target="_blank" className="no-underline inline-flex text-label-sky-06 hover:text-label-sky-07 transition-colors"><i className='is/tailwindcss'/></a>
     </div>
     <div className='inline-flex gap-2'>
       <span>by</span>

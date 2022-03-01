@@ -3,7 +3,7 @@ import { ComponentProps } from '../../meta/component'
 
 const Headline = ({ children }: ComponentProps ): ReactElement =>
   <div className='text-center py-12'>
-    <h1 className='m-auto text-primary-h1 max-w-2xl'>
+    <h1 className='m-auto text-primary-h1 max-w-xl'>
       { children }
     </h1>
   </div>
