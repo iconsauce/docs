@@ -5,18 +5,19 @@
   "main": "index.js",
   "private": true,
   "scripts": {
+    "build": "npm run clean && node ./scripts/build.js",
     "build:css": "postcss src/styles/iconsauce.css -o public/styles/iconsauce.css",
     "build:iconsauce": "iconsauce -o public/styles/iconsauce.css",
-    "build": "node ./scripts/build.js",
-    "iconsauce": "iconsauce -o public/styles/iconsauce.css",
+    "clean": "rm -rf ./node_modules/.cache/*",
     "deploy": "gh-pages -d build",
     "eject": "react-scripts eject",
+    "iconsauce": "iconsauce -o public/styles/iconsauce.css",
     "predeploy": "npm run build",
-    "start": "rm -rf ./node_modules/.cache/* && node ./scripts/start.js",
+    "start": "npm run clean && node ./scripts/start.js",
     "test": "react-scripts test"
   },
   "dependencies": {
-    "@iconsauce/core": "^0.3.8",
+    "@iconsauce/core": "^1.0.1",
     "@iconsauce/material-design-icons-updated": "^1.0.3",
     "@iconsauce/mdi-svg": "^1.0.2",
     "@iconsauce/mgg-icons": "^1.0.1",
@@ -50,7 +51,7 @@
     "gh-pages": "^3.2.3",
     "postcss": "^8.4.5",
     "postcss-cli": "^9.1.0",
-    "postcss-iconsauce": "^0.1.1",
+    "postcss-iconsauce": "^1.0.4",
     "postcss-import": "^14.0.2",
     "rewire": "^6.0.0",
     "typescript": "^4.5.4"
