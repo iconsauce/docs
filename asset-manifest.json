@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/docs/static/css/main.48e9b922.css",
-    "main.js": "/docs/static/js/main.2aa1e191.js",
+    "main.css": "/docs/static/css/main.d4f448fa.css",
+    "main.js": "/docs/static/js/main.825ec6a0.js",
     "static/media/roboto-latin-900italic.woff": "/docs/static/media/roboto-latin-900italic.c20d916c1a1b094c1cec.woff",
     "static/media/roboto-latin-300italic.woff": "/docs/static/media/roboto-latin-300italic.bd5b7a13f2c52b531a2a.woff",
     "static/media/roboto-latin-500italic.woff": "/docs/static/media/roboto-latin-500italic.18d00f739ff1e1c52db1.woff",
@@ -27,8 +27,8 @@
     "static/media/roboto-latin-400.woff2": "/docs/static/media/roboto-latin-400.176f8f5bd5f02b3abfcf.woff2",
     "static/media/roboto-latin-900.woff2": "/docs/static/media/roboto-latin-900.870c8c1486f76054301a.woff2",
     "static/media/karla-latin-700italic.woff": "/docs/static/media/karla-latin-700italic.ccf07a0b3151feaea9cb.woff",
-    "static/media/sauce-large.svg": "/docs/static/media/sauce-large.523ad79516db02eb6680.svg",
     "static/media/karla-latin-400italic.woff": "/docs/static/media/karla-latin-400italic.de14a923bb3f17cb1da2.woff",
+    "static/media/sauce.svg": "/docs/static/media/sauce.b6c9cc45cb3ec3e82d70.svg",
     "static/media/karla-latin-700.woff": "/docs/static/media/karla-latin-700.170cca6c7314cd6e455d.woff",
     "static/media/karla-latin-400.woff": "/docs/static/media/karla-latin-400.f0093d4cc7e427b38b96.woff",
     "static/media/karla-latin-700italic.woff2": "/docs/static/media/karla-latin-700italic.b5903d470d554f503692.woff2",
@@ -36,11 +36,11 @@
     "static/media/karla-latin-700.woff2": "/docs/static/media/karla-latin-700.b72aff3f88f08c8d7f83.woff2",
     "static/media/karla-latin-400.woff2": "/docs/static/media/karla-latin-400.1ad861b3e28d6fe3843c.woff2",
     "index.html": "/docs/index.html",
-    "main.48e9b922.css.map": "/docs/static/css/main.48e9b922.css.map",
-    "main.2aa1e191.js.map": "/docs/static/js/main.2aa1e191.js.map"
+    "main.d4f448fa.css.map": "/docs/static/css/main.d4f448fa.css.map",
+    "main.825ec6a0.js.map": "/docs/static/js/main.825ec6a0.js.map"
   },
   "entrypoints": [
-    "static/css/main.48e9b922.css",
-    "static/js/main.2aa1e191.js"
+    "static/css/main.d4f448fa.css",
+    "static/js/main.825ec6a0.js"
   ]
 }
