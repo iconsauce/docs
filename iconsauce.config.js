@@ -4,9 +4,12 @@ module.exports = {
   ],
   fontSize: '24px',
   plugin: [
+    require('@iconsauce/heroicons'),
     require('@iconsauce/material-design-icons-updated'),
+    require('@iconsauce/material-icons'),
     require('@iconsauce/mdi-svg'),
     require('@iconsauce/mgg-icons'),
+    require('@iconsauce/octicons'),
     {
       prefix: 'is',
       regex: {

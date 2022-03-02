@@ -55,17 +55,17 @@ ReactDOM.render(
           </Doc>
           <Doc title='Plugins'>
             <DocList description='Use iconsauce with the most used icon sets available.'>
-              <ButtonDark icon="mdi/pipe-wrench" href="https://github.com/iconsauce/docs/wiki/Write-a-plugin">Write a plugin</ButtonDark>
-              <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/plugin-material-design-icons-updated">Material Design Icons Updated</ButtonDark>
-              <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/plugin-mdi-svg">Material Design Icons Community</ButtonDark>
-              {/* <ButtonDark icon="mdi/power-plug">Google Material Icons</ButtonDark> */}
-              {/* <ButtonDark icon="mdi/power-plug">Heroicons</ButtonDark> */}
-              {/* <ButtonDark icon="mdi/power-plug">Octicons</ButtonDark> */}
-              {/* <ButtonDark icon="mdi/power-plug">Ionicons</ButtonDark> */}
-              {/* <ButtonDark icon="mdi/power-plug">FontAwesome</ButtonDark> */}
+              <ButtonDark icon="miu/filled/edit" href="https://github.com/iconsauce/docs/wiki/Write-a-plugin">Write a plugin</ButtonDark>
+              <ButtonDark icon="miu/filled/extension" href="https://github.com/iconsauce/plugin-material-design-icons-updated">Material Design Icons Updated</ButtonDark>
+              <ButtonDark icon="mdi/toy-brick" href="https://github.com/iconsauce/plugin-mdi-svg">Material Design Icons Community</ButtonDark>
+              <ButtonDark icon="hero/scissors" href="https://github.com/iconsauce/plugin-heroicons">Heroicons</ButtonDark>
+              <ButtonDark icon="mi/baseline/extension" href="https://github.com/iconsauce/plugin-material-icons">Google Material Icons</ButtonDark>
+              <ButtonDark icon="oct/24/hubot" href="https://github.com/iconsauce/plugin-octicons">Octicons</ButtonDark>
+              {/* <ButtonDark icon="ion/power-plug">Ionicons</ButtonDark> */}
+              {/* <ButtonDark icon="fa/power-plug">FontAwesome</ButtonDark> */}
             </DocList>
             <DocList description='Use iconsauce with your own icon set.'>
-              <ButtonDark icon="mdi/power-plug" href="https://github.com/iconsauce/plugin-mgg-icons">Maggioli Icons</ButtonDark>
+              <ButtonDark icon="mgg/user-dead" href="https://github.com/iconsauce/plugin-mgg-icons">Maggioli Icons</ButtonDark>
             </DocList>
           </Doc>
         </div>
