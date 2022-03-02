@@ -6,6 +6,8 @@ const Footer = (): ReactElement =>
     <div className='inline-flex gap-2 items-center'>
       <span>Built with</span>
       <i className='mdi/heart text-label-amaranth-05'/>
+      <span>+</span>
+      <i className='mdi/coffee text-label-yellow-05'/>
     </div>
     <div className='inline-flex gap-2'>
       <span>by</span>

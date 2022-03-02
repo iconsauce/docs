@@ -16,7 +16,7 @@ const Button = ({
   href,
   variant = 'bg-adjust-tone-03 hover:bg-adjust-tone-04 text-adjust-tone h-10 rounded-lg',
 }: ButtonProps): ReactElement =>
-  <a href={href} className={clsx('px-4 inline-flex items-center gap-2 no-underline transition-colors', variant, className)}>
+  <a href={href} className={clsx('pl-3 pr-4 inline-flex items-center gap-2 no-underline transition-colors', variant, className)}>
     { icon && <i className={icon}/> }
     <span className='text-primary-action'>{ children }</span>
   </a>
@@ -43,7 +43,7 @@ const ButtonTailwind = ({
   href,
   icon,
 }: ButtonProps): ReactElement =>
-  <Button href={href} className={className} icon={icon} variant='shadow-lg shadow-label-sky-05/30 bg-label-sky-05 hover:bg-label-sky-04 text-adjust-tone h-8 rounded-full'>{ children }</Button>
+  <Button href={href} className={className} icon={icon} variant='bg-label-sky-05 hover:bg-label-sky-04 text-adjust-tone h-8 rounded-md'>{ children }</Button>
 
 export default Button
 export {

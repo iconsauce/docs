@@ -47,8 +47,8 @@ ReactDOM.render(
         <div className='grid tablet:grid-cols-2 gap-12 tablet:px-6 desktop:p-0'>
           <Doc title='Core'>
             <DocList description='How to use iconsauce as cli command, import it in your scripts or as postcss plugin.'>
-              <ButtonDark icon="is/logo" href="https://github.com/iconsauce/docs/wiki/CLI">Docs</ButtonDark>
-              <ButtonDark icon="is/logo" href="https://github.com/iconsauce/docs/wiki/Configuration">Configuration</ButtonDark>
+              <ButtonDark icon="mdi/github" href="https://github.com/iconsauce/docs/wiki/CLI">Docs</ButtonDark>
+              <ButtonDark icon="mdi/cog" href="https://github.com/iconsauce/docs/wiki/Configuration">Configuration</ButtonDark>
               <ButtonDark icon="mgg/terminal" href="https://github.com/iconsauce/docs/wiki/CLI">CLI</ButtonDark>
               <ButtonDark icon="is/postcss" href="https://github.com/iconsauce/docs/wiki/PostCSS-plugin">Postcss plugin</ButtonDark>
             </DocList>

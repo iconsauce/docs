@@ -3,7 +3,6 @@ import clsx from 'clsx'
 import hljs from 'highlight.js/lib/core'
 import xml from 'highlight.js/lib/languages/xml'
 import css from 'highlight.js/lib/languages/css'
-// import 'highlight.js/styles/an-old-hope.css'
 import 'highlight.js/styles/atom-one-dark.css'
 hljs.registerLanguage('xml', xml)
 hljs.registerLanguage('css', css)
@@ -15,16 +14,16 @@ const SAVE_DELAY = 1000
 const FINISH_DELAY = 5000
 
 const htmlCode = [
-  '<cmp-icon class="mdi/lock">Material Design Icons</cmp-icon>',
-  '<cmp-icon class="fa/solid/car">FontAwesome</cmp-icon>',
-  '<cmp-icon class="my/iconsauce">Custom Icon</cmp-icon>',
+  '<i class="mdi/lock">Material Design</i>',
+  '<i class="fa/solid/car">FontAwesome</i>',
+  '<i class="my/iconsauce">Custom Icon</i>',
 ]
 
 const cssCode = [
   [
     'A...+45...Z',
     'A...+167...Z',
-    'A...+315...Z',
+    'A...+212...Z',
   ], [
     '[class^="mdi/"], [class*=" mdi/"]',
     '[class^="mdi/"], [class*=" mdi/"], [class^="fa/"], [class*=" fa/"]',
@@ -205,7 +204,7 @@ const Ide = ({
     }
   }, [saveStatus])
 
-  return <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2 min-h-96', className)}>
+  return <div className={clsx('bg-adjust-tone-03 rounded-xl overflow-hidden p-2 grid gap-2 min-h-[332px] mobile:min-h-[564px]', className)}>
     <div className='grid gap-2 wide:grid-cols-2'>
       <Column>
         <File>
@@ -214,8 +213,8 @@ const Ide = ({
           </Tab>
           <Code language="html" code={`
 <p>
-  Get all the SVG icons you need to a font icons CSS,
-  from different node modules and directly inside your project.
+  Get all the SVG icons you need
+  to a CSS icon font. Runtime.
 </p>
 ${textCode !== '' ? textCode + '\n' : ''}
             `}/>
@@ -231,12 +230,10 @@ ${textCode !== '' ? textCode + '\n' : ''}
   font-family: "iconsauce";
   src: url("data:font/truetype;charset=utf-8;base64,${cssFont}") format("truetype");
 }
-
 ${cssRegexSelectors} {
   font-family: "iconsauce";
   ...
 }
-
 ${cssIcons}
           `}/>
         </File>
