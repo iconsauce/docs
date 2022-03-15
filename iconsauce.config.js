@@ -1,4 +1,5 @@
 module.exports = {
+  center: true,
   content: [
     './src/**/*.{tsx,ts}',
   ],
