@@ -11,7 +11,8 @@ const Logo = (): ReactElement =>
 
 const Menu = (): ReactElement =>
   <nav className='inline-flex gap-2'>
-    <Button icon="mdi/github" href="https://github.com/iconsauce/docs/wiki">Docs</Button>
+    <Button href="https://marketplace.visualstudio.com/items?itemName=Iconsauce.vscode-iconsauce-autocomplete" icon="mdi/microsoft-visual-studio-code" compressed>Autocomplete</Button>
+    <Button icon="mdi/github" href="https://github.com/iconsauce/docs/wiki" compressed>Docs</Button>
   </nav>
 
 const Header = (): ReactElement =>

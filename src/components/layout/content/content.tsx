@@ -6,7 +6,7 @@ const Content = ({
   children,
   className = 'max-w-screen-wide',
 }: ComponentProps): ReactElement =>
-  <div className={clsx('m-auto px-4', className)}>
+  <div className={clsx('m-auto px-4 grid gap-12', className)}>
     { children }
   </div>
 

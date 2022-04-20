@@ -4,6 +4,7 @@ import Content from './components/layout/content/content'
 import Doc, { DocList } from './components/doc/doc'
 import Header from './components/header/header'
 import Footer from './components/footer/footer'
+import Autocomplete from './components/autocomplete/autocomplete'
 import Headline from './components/headline/headline'
 import Homepage from './components/layout/homepage/homepage'
 import Hr from './components/hr/hr'
@@ -23,24 +24,20 @@ ReactDOM.render(
     <Homepage>
       <Sauce>
         <Content>
-          <Header/>
-          <Hr/>
+          <div>
+            <Header/>
+            <Hr/>
+          </div>
           <Headline>
             A tool for creating CSS icon fonts used exclusively in your code.
           </Headline>
           <Ide className='shadow-2xl relative'/>
-          <div className='grid gap-2 mt-12'>
+          <div className='grid gap-2'>
             <p className='text-secondary-paragraph text-center'>
               iconsauce ensures a <b>tiny CSS font icon build</b>, which keeps only the glyphs used by your code.
             </p>
-            <p className='text-secondary-paragraph text-center flex flex-wrap items-center justify-center gap-0 px-2'>
-              This project is inspired
-              by utility first framework
-              <ButtonTailwind href="https://www.tailwindcss.com" icon="is/tailwindcss" className='ml-1'>
-                TailwindCSS
-              </ButtonTailwind>
-            </p>
           </div>
+          <Autocomplete/>
         </Content>
       </Sauce>
       <Content className='max-w-screen-desktop grid gap-12 my-12'>
@@ -68,6 +65,16 @@ ReactDOM.render(
               <ButtonDark icon="mgg/user-dead" href="https://github.com/iconsauce/plugin-mgg-icons">Maggioli Icons</ButtonDark>
             </DocList>
           </Doc>
+        </div>
+        <Hr className='bg-adjust-tone-05'/>
+        <div className='grid gap-2'>
+          <p className='text-secondary-caption text-center flex flex-wrap items-center justify-center gap-0 px-2 mobile:bg-label-sky-09 mobile:p-4 mobile:rounded-md mobile:text-label-sky-02 text-adjust-tone-10'>
+            This project is inspired
+            by utility first framework
+            <ButtonTailwind href="https://www.tailwindcss.com" icon="is/tailwindcss" className='mx-2 mobile:mt-4'>
+              TailwindCSS
+            </ButtonTailwind>
+          </p>
         </div>
         <Hr className='bg-adjust-tone-05'/>
         <Footer/>
